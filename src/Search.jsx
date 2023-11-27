@@ -97,7 +97,12 @@ const Search = ({ onSearch, data }) => {
           newSuggestions.push(key);
         }
       });
-
+      
+      Object.keys(data.detergents).forEach((key) => {
+        if (key.toLowerCase().includes(input.toLowerCase())) {
+          newSuggestions.push(key);
+        }
+      });
       
       setSuggestions(newSuggestions);
     } else {
